@@ -1,0 +1,25 @@
+{
+  "name": "conveyx",
+  "private": true,
+  "scripts": {
+    "dev": "turbo dev --concurrency=15",
+    "build": "turbo build",
+    "typecheck": "turbo typecheck",
+    "db:start": "node scripts/db-start.mjs",
+    "db:stop": "supabase stop",
+    "db:reset": "supabase db reset",
+    "db:push": "supabase db push",
+    "db:status": "supabase status",
+    "db:check": "node scripts/check-db.mjs"
+  },
+  "devDependencies": {
+    "@supabase/supabase-js": "^2.47.10",
+    "pg": "^8.13.1",
+    "turbo": "^2.3.0",
+    "typescript": "^5.7.0"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=20"
+  }
+}

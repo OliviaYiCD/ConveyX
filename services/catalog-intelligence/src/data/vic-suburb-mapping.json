@@ -1,0 +1,1023 @@
+{
+  "suburbs": [
+    {
+      "suburb": "Melbourne",
+      "postcode": "3000",
+      "region": "Inner Melbourne",
+      "councils": [
+        "Melbourne City"
+      ],
+      "water_authority": "Greater Western",
+      "water_provider": "Greater Western Water"
+    },
+    {
+      "suburb": "East Melbourne",
+      "postcode": "3002",
+      "region": "Inner Melbourne",
+      "councils": [
+        "Melbourne City"
+      ],
+      "water_authority": "Greater Western",
+      "water_provider": "Greater Western Water"
+    },
+    {
+      "suburb": "Carlton",
+      "postcode": "3053",
+      "region": "Inner Melbourne",
+      "councils": [
+        "Melbourne City"
+      ],
+      "water_authority": "Greater Western",
+      "water_provider": "Greater Western Water"
+    },
+    {
+      "suburb": "Fitzroy",
+      "postcode": "3065",
+      "region": "Inner Melbourne",
+      "councils": [
+        "Yarra City"
+      ],
+      "water_authority": "Yarra Valley",
+      "water_provider": "Yarra Valley Water"
+    },
+    {
+      "suburb": "Collingwood",
+      "postcode": "3066",
+      "region": "Inner Melbourne",
+      "councils": [
+        "Yarra City"
+      ],
+      "water_authority": "Yarra Valley",
+      "water_provider": "Yarra Valley Water"
+    },
+    {
+      "suburb": "Richmond",
+      "postcode": "3121",
+      "region": "Inner Melbourne",
+      "councils": [
+        "Yarra City"
+      ],
+      "water_authority": "Yarra Valley",
+      "water_provider": "Yarra Valley Water"
+    },
+    {
+      "suburb": "South Yarra",
+      "postcode": "3141",
+      "region": "Inner Melbourne",
+      "councils": [
+        "Melbourne City",
+        "Stonnington City"
+      ],
+      "water_authority": "South East",
+      "water_provider": "South East Water"
+    },
+    {
+      "suburb": "Prahran",
+      "postcode": "3181",
+      "region": "Inner Melbourne",
+      "councils": [
+        "Stonnington City"
+      ],
+      "water_authority": "South East",
+      "water_provider": "South East Water"
+    },
+    {
+      "suburb": "St Kilda",
+      "postcode": "3182",
+      "region": "Inner Melbourne",
+      "councils": [
+        "Port Phillip City"
+      ],
+      "water_authority": "South East",
+      "water_provider": "South East Water"
+    },
+    {
+      "suburb": "Docklands",
+      "postcode": "3008",
+      "region": "Inner Melbourne",
+      "councils": [
+        "Melbourne City"
+      ],
+      "water_authority": "Greater Western",
+      "water_provider": "Greater Western Water"
+    },
+    {
+      "suburb": "Parkville",
+      "postcode": "3052",
+      "region": "Inner Melbourne",
+      "councils": [
+        "Melbourne City"
+      ],
+      "water_authority": "Greater Western",
+      "water_provider": "Greater Western Water"
+    },
+    {
+      "suburb": "South Melbourne",
+      "postcode": "3205",
+      "region": "Inner Melbourne",
+      "councils": [
+        "Port Phillip City"
+      ],
+      "water_authority": "South East",
+      "water_provider": "South East Water"
+    },
+    {
+      "suburb": "Port Melbourne",
+      "postcode": "3207",
+      "region": "Inner Melbourne",
+      "councils": [
+        "Melbourne City",
+        "Port Phillip City"
+      ],
+      "water_authority": "South East",
+      "water_provider": "South East Water"
+    },
+    {
+      "suburb": "Kew",
+      "postcode": "3101",
+      "region": "Eastern Suburbs",
+      "councils": [
+        "Boroondara City"
+      ],
+      "water_authority": "Yarra Valley",
+      "water_provider": "Yarra Valley Water"
+    },
+    {
+      "suburb": "Hawthorn",
+      "postcode": "3122",
+      "region": "Eastern Suburbs",
+      "councils": [
+        "Boroondara City"
+      ],
+      "water_authority": "Yarra Valley",
+      "water_provider": "Yarra Valley Water"
+    },
+    {
+      "suburb": "Camberwell",
+      "postcode": "3124",
+      "region": "Eastern Suburbs",
+      "councils": [
+        "Boroondara City"
+      ],
+      "water_authority": "Yarra Valley",
+      "water_provider": "Yarra Valley Water"
+    },
+    {
+      "suburb": "Balwyn",
+      "postcode": "3103",
+      "region": "Eastern Suburbs",
+      "councils": [
+        "Boroondara City"
+      ],
+      "water_authority": "Yarra Valley",
+      "water_provider": "Yarra Valley Water"
+    },
+    {
+      "suburb": "Box Hill",
+      "postcode": "3128",
+      "region": "Eastern Suburbs",
+      "councils": [
+        "Whitehorse City"
+      ],
+      "water_authority": "Yarra Valley",
+      "water_provider": "Yarra Valley Water"
+    },
+    {
+      "suburb": "Doncaster",
+      "postcode": "3108",
+      "region": "Eastern Suburbs",
+      "councils": [
+        "Manningham City"
+      ],
+      "water_authority": "Yarra Valley",
+      "water_provider": "Yarra Valley Water"
+    },
+    {
+      "suburb": "Glen Waverley",
+      "postcode": "3150",
+      "region": "Eastern Suburbs",
+      "councils": [
+        "Monash City"
+      ],
+      "water_authority": "Yarra Valley",
+      "water_provider": "Yarra Valley Water"
+    },
+    {
+      "suburb": "Mount Waverley",
+      "postcode": "3149",
+      "region": "Eastern Suburbs",
+      "councils": [
+        "Monash City"
+      ],
+      "water_authority": "Yarra Valley",
+      "water_provider": "Yarra Valley Water"
+    },
+    {
+      "suburb": "Ringwood",
+      "postcode": "3134",
+      "region": "Eastern Suburbs",
+      "councils": [
+        "Maroondah City"
+      ],
+      "water_authority": "Yarra Valley",
+      "water_provider": "Yarra Valley Water"
+    },
+    {
+      "suburb": "Wantirna",
+      "postcode": "3152",
+      "region": "Eastern Suburbs",
+      "councils": [
+        "Knox City"
+      ],
+      "water_authority": "South East",
+      "water_provider": "South East Water"
+    },
+    {
+      "suburb": "Burwood",
+      "postcode": "3125",
+      "region": "Eastern Suburbs",
+      "councils": [
+        "Monash City",
+        "Whitehorse City"
+      ],
+      "water_authority": "Yarra Valley",
+      "water_provider": "Yarra Valley Water"
+    },
+    {
+      "suburb": "Mitcham",
+      "postcode": "3132",
+      "region": "Eastern Suburbs",
+      "councils": [
+        "Whitehorse City"
+      ],
+      "water_authority": "Yarra Valley",
+      "water_provider": "Yarra Valley Water"
+    },
+    {
+      "suburb": "Croydon",
+      "postcode": "3136",
+      "region": "Eastern Suburbs",
+      "councils": [
+        "Maroondah City"
+      ],
+      "water_authority": "Yarra Valley",
+      "water_provider": "Yarra Valley Water"
+    },
+    {
+      "suburb": "Knoxfield",
+      "postcode": "3180",
+      "region": "Eastern Suburbs",
+      "councils": [
+        "Knox City"
+      ],
+      "water_authority": "South East",
+      "water_provider": "South East Water"
+    },
+    {
+      "suburb": "Brunswick",
+      "postcode": "3056",
+      "region": "Northern Suburbs",
+      "councils": [
+        "Merri-bek City"
+      ],
+      "water_authority": "Yarra Valley",
+      "water_provider": "Yarra Valley Water"
+    },
+    {
+      "suburb": "Coburg",
+      "postcode": "3058",
+      "region": "Northern Suburbs",
+      "councils": [
+        "Merri-bek City"
+      ],
+      "water_authority": "Yarra Valley",
+      "water_provider": "Yarra Valley Water"
+    },
+    {
+      "suburb": "Northcote",
+      "postcode": "3070",
+      "region": "Northern Suburbs",
+      "councils": [
+        "Darebin City"
+      ],
+      "water_authority": "Yarra Valley",
+      "water_provider": "Yarra Valley Water"
+    },
+    {
+      "suburb": "Thornbury",
+      "postcode": "3071",
+      "region": "Northern Suburbs",
+      "councils": [
+        "Darebin City"
+      ],
+      "water_authority": "Yarra Valley",
+      "water_provider": "Yarra Valley Water"
+    },
+    {
+      "suburb": "Preston",
+      "postcode": "3072",
+      "region": "Northern Suburbs",
+      "councils": [
+        "Darebin City"
+      ],
+      "water_authority": "Yarra Valley",
+      "water_provider": "Yarra Valley Water"
+    },
+    {
+      "suburb": "Reservoir",
+      "postcode": "3073",
+      "region": "Northern Suburbs",
+      "councils": [
+        "Darebin City"
+      ],
+      "water_authority": "Yarra Valley",
+      "water_provider": "Yarra Valley Water"
+    },
+    {
+      "suburb": "Bundoora",
+      "postcode": "3083",
+      "region": "Northern Suburbs",
+      "councils": [
+        "Banyule City",
+        "Darebin City",
+        "Whittlesea City"
+      ],
+      "water_authority": "Yarra Valley",
+      "water_provider": "Yarra Valley Water"
+    },
+    {
+      "suburb": "Epping",
+      "postcode": "3076",
+      "region": "Northern Suburbs",
+      "councils": [
+        "Whittlesea City"
+      ],
+      "water_authority": "Yarra Valley",
+      "water_provider": "Yarra Valley Water"
+    },
+    {
+      "suburb": "Craigieburn",
+      "postcode": "3064",
+      "region": "Northern Suburbs",
+      "councils": [
+        "Hume City"
+      ],
+      "water_authority": "Yarra Valley",
+      "water_provider": "Yarra Valley Water"
+    },
+    {
+      "suburb": "Broadmeadows",
+      "postcode": "3047",
+      "region": "Northern Suburbs",
+      "councils": [
+        "Hume City"
+      ],
+      "water_authority": "Yarra Valley",
+      "water_provider": "Yarra Valley Water"
+    },
+    {
+      "suburb": "Essendon",
+      "postcode": "3040",
+      "region": "Northern Suburbs",
+      "councils": [
+        "Moonee Valley City"
+      ],
+      "water_authority": "Greater Western",
+      "water_provider": "Greater Western Water"
+    },
+    {
+      "suburb": "Moonee Ponds",
+      "postcode": "3039",
+      "region": "Northern Suburbs",
+      "councils": [
+        "Moonee Valley City"
+      ],
+      "water_authority": "Greater Western",
+      "water_provider": "Greater Western Water"
+    },
+    {
+      "suburb": "South Morang",
+      "postcode": "3752",
+      "region": "Northern Suburbs",
+      "councils": [
+        "Whittlesea City"
+      ],
+      "water_authority": "Yarra Valley",
+      "water_provider": "Yarra Valley Water"
+    },
+    {
+      "suburb": "Footscray",
+      "postcode": "3011",
+      "region": "Western Suburbs",
+      "councils": [
+        "Maribyrnong City"
+      ],
+      "water_authority": "Greater Western",
+      "water_provider": "Greater Western Water"
+    },
+    {
+      "suburb": "Yarraville",
+      "postcode": "3013",
+      "region": "Western Suburbs",
+      "councils": [
+        "Maribyrnong City"
+      ],
+      "water_authority": "Greater Western",
+      "water_provider": "Greater Western Water"
+    },
+    {
+      "suburb": "Williamstown",
+      "postcode": "3016",
+      "region": "Western Suburbs",
+      "councils": [
+        "Hobsons Bay City"
+      ],
+      "water_authority": "Greater Western",
+      "water_provider": "Greater Western Water"
+    },
+    {
+      "suburb": "Altona",
+      "postcode": "3018",
+      "region": "Western Suburbs",
+      "councils": [
+        "Hobsons Bay City"
+      ],
+      "water_authority": "Greater Western",
+      "water_provider": "Greater Western Water"
+    },
+    {
+      "suburb": "Sunshine",
+      "postcode": "3020",
+      "region": "Western Suburbs",
+      "councils": [
+        "Brimbank City"
+      ],
+      "water_authority": "Greater Western",
+      "water_provider": "Greater Western Water"
+    },
+    {
+      "suburb": "Point Cook",
+      "postcode": "3030",
+      "region": "Western Suburbs",
+      "councils": [
+        "Wyndham City"
+      ],
+      "water_authority": "Greater Western",
+      "water_provider": "Greater Western Water"
+    },
+    {
+      "suburb": "Werribee",
+      "postcode": "3030",
+      "region": "Western Suburbs",
+      "councils": [
+        "Wyndham City"
+      ],
+      "water_authority": "Greater Western",
+      "water_provider": "Greater Western Water"
+    },
+    {
+      "suburb": "Tarneit",
+      "postcode": "3029",
+      "region": "Western Suburbs",
+      "councils": [
+        "Wyndham City"
+      ],
+      "water_authority": "Greater Western",
+      "water_provider": "Greater Western Water"
+    },
+    {
+      "suburb": "Truganina",
+      "postcode": "3029",
+      "region": "Western Suburbs",
+      "councils": [
+        "Melton City",
+        "Wyndham City"
+      ],
+      "water_authority": "Greater Western",
+      "water_provider": "Greater Western Water"
+    },
+    {
+      "suburb": "Melton",
+      "postcode": "3337",
+      "region": "Western Suburbs",
+      "councils": [
+        "Melton City"
+      ],
+      "water_authority": "Greater Western",
+      "water_provider": "Greater Western Water"
+    },
+    {
+      "suburb": "Caroline Springs",
+      "postcode": "3023",
+      "region": "Western Suburbs",
+      "councils": [
+        "Melton City"
+      ],
+      "water_authority": "Greater Western",
+      "water_provider": "Greater Western Water"
+    },
+    {
+      "suburb": "Keilor",
+      "postcode": "3036",
+      "region": "Western Suburbs",
+      "councils": [
+        "Brimbank City"
+      ],
+      "water_authority": "Greater Western",
+      "water_provider": "Greater Western Water"
+    },
+    {
+      "suburb": "Brighton",
+      "postcode": "3186",
+      "region": "Southern & Bayside",
+      "councils": [
+        "Bayside City"
+      ],
+      "water_authority": "South East",
+      "water_provider": "South East Water"
+    },
+    {
+      "suburb": "Hampton",
+      "postcode": "3188",
+      "region": "Southern & Bayside",
+      "councils": [
+        "Bayside City"
+      ],
+      "water_authority": "South East",
+      "water_provider": "South East Water"
+    },
+    {
+      "suburb": "Sandringham",
+      "postcode": "3191",
+      "region": "Southern & Bayside",
+      "councils": [
+        "Bayside City"
+      ],
+      "water_authority": "South East",
+      "water_provider": "South East Water"
+    },
+    {
+      "suburb": "Mentone",
+      "postcode": "3194",
+      "region": "Southern & Bayside",
+      "councils": [
+        "Kingston City"
+      ],
+      "water_authority": "South East",
+      "water_provider": "South East Water"
+    },
+    {
+      "suburb": "Bentleigh",
+      "postcode": "3204",
+      "region": "Southern & Bayside",
+      "councils": [
+        "Glen Eira City"
+      ],
+      "water_authority": "South East",
+      "water_provider": "South East Water"
+    },
+    {
+      "suburb": "Elsternwick",
+      "postcode": "3185",
+      "region": "Southern & Bayside",
+      "councils": [
+        "Glen Eira City"
+      ],
+      "water_authority": "South East",
+      "water_provider": "South East Water"
+    },
+    {
+      "suburb": "Frankston",
+      "postcode": "3199",
+      "region": "Southern & Bayside",
+      "councils": [
+        "Frankston City"
+      ],
+      "water_authority": "South East",
+      "water_provider": "South East Water"
+    },
+    {
+      "suburb": "Mornington",
+      "postcode": "3931",
+      "region": "Southern & Bayside",
+      "councils": [
+        "Mornington Peninsula Shire"
+      ],
+      "water_authority": "South East",
+      "water_provider": "South East Water"
+    },
+    {
+      "suburb": "Sorrento",
+      "postcode": "3943",
+      "region": "Southern & Bayside",
+      "councils": [
+        "Mornington Peninsula Shire"
+      ],
+      "water_authority": "South East",
+      "water_provider": "South East Water"
+    },
+    {
+      "suburb": "Portsea",
+      "postcode": "3944",
+      "region": "Southern & Bayside",
+      "councils": [
+        "Mornington Peninsula Shire"
+      ],
+      "water_authority": "South East",
+      "water_provider": "South East Water"
+    },
+    {
+      "suburb": "Mordialloc",
+      "postcode": "3195",
+      "region": "Southern & Bayside",
+      "councils": [
+        "Kingston City"
+      ],
+      "water_authority": "South East",
+      "water_provider": "South East Water"
+    },
+    {
+      "suburb": "Clayton",
+      "postcode": "3168",
+      "region": "South Eastern Suburbs",
+      "councils": [
+        "Kingston City",
+        "Monash City"
+      ],
+      "water_authority": "South East",
+      "water_provider": "South East Water"
+    },
+    {
+      "suburb": "Springvale",
+      "postcode": "3171",
+      "region": "South Eastern Suburbs",
+      "councils": [
+        "Greater Dandenong City"
+      ],
+      "water_authority": "South East",
+      "water_provider": "South East Water"
+    },
+    {
+      "suburb": "Dandenong",
+      "postcode": "3175",
+      "region": "South Eastern Suburbs",
+      "councils": [
+        "Greater Dandenong City"
+      ],
+      "water_authority": "South East",
+      "water_provider": "South East Water"
+    },
+    {
+      "suburb": "Rowville",
+      "postcode": "3178",
+      "region": "South Eastern Suburbs",
+      "councils": [
+        "Knox City"
+      ],
+      "water_authority": "South East",
+      "water_provider": "South East Water"
+    },
+    {
+      "suburb": "Mulgrave",
+      "postcode": "3170",
+      "region": "South Eastern Suburbs",
+      "councils": [
+        "Monash City"
+      ],
+      "water_authority": "South East",
+      "water_provider": "South East Water"
+    },
+    {
+      "suburb": "Cranbourne",
+      "postcode": "3977",
+      "region": "South Eastern Suburbs",
+      "councils": [
+        "Casey City"
+      ],
+      "water_authority": "South East",
+      "water_provider": "South East Water"
+    },
+    {
+      "suburb": "Berwick",
+      "postcode": "3806",
+      "region": "South Eastern Suburbs",
+      "councils": [
+        "Casey City"
+      ],
+      "water_authority": "South East",
+      "water_provider": "South East Water"
+    },
+    {
+      "suburb": "Pakenham",
+      "postcode": "3810",
+      "region": "South Eastern Suburbs",
+      "councils": [
+        "Cardinia Shire"
+      ],
+      "water_authority": "South East",
+      "water_provider": "South East Water"
+    },
+    {
+      "suburb": "Oakleigh",
+      "postcode": "3166",
+      "region": "South Eastern Suburbs",
+      "councils": [
+        "Monash City"
+      ],
+      "water_authority": "South East",
+      "water_provider": "South East Water"
+    },
+    {
+      "suburb": "Chadstone",
+      "postcode": "3148",
+      "region": "South Eastern Suburbs",
+      "councils": [
+        "Monash City"
+      ],
+      "water_authority": "South East",
+      "water_provider": "South East Water"
+    },
+    {
+      "suburb": "Geelong",
+      "postcode": "3220",
+      "region": "Geelong & Surf Coast",
+      "councils": [
+        "Greater Geelong"
+      ],
+      "water_authority": "Barwon Region",
+      "water_provider": "Barwon Water"
+    },
+    {
+      "suburb": "Geelong West",
+      "postcode": "3218",
+      "region": "Geelong & Surf Coast",
+      "councils": [
+        "Greater Geelong"
+      ],
+      "water_authority": "Barwon Region",
+      "water_provider": "Barwon Water"
+    },
+    {
+      "suburb": "Newtown",
+      "postcode": "3220",
+      "region": "Geelong & Surf Coast",
+      "councils": [
+        "Greater Geelong"
+      ],
+      "water_authority": "Barwon Region",
+      "water_provider": "Barwon Water"
+    },
+    {
+      "suburb": "Belmont",
+      "postcode": "3216",
+      "region": "Geelong & Surf Coast",
+      "councils": [
+        "Greater Geelong"
+      ],
+      "water_authority": "Barwon Region",
+      "water_provider": "Barwon Water"
+    },
+    {
+      "suburb": "Torquay",
+      "postcode": "3228",
+      "region": "Geelong & Surf Coast",
+      "councils": [
+        "Surf Coast Shire"
+      ],
+      "water_authority": "Barwon Region",
+      "water_provider": "Barwon Water"
+    },
+    {
+      "suburb": "Ocean Grove",
+      "postcode": "3226",
+      "region": "Geelong & Surf Coast",
+      "councils": [
+        "Greater Geelong"
+      ],
+      "water_authority": "Barwon Region",
+      "water_provider": "Barwon Water"
+    },
+    {
+      "suburb": "Barwon Heads",
+      "postcode": "3227",
+      "region": "Geelong & Surf Coast",
+      "councils": [
+        "Greater Geelong"
+      ],
+      "water_authority": "Barwon Region",
+      "water_provider": "Barwon Water"
+    },
+    {
+      "suburb": "Point Lonsdale",
+      "postcode": "3225",
+      "region": "Geelong & Surf Coast",
+      "councils": [
+        "Borough of Queenscliffe",
+        "Greater Geelong"
+      ],
+      "water_authority": "Barwon Region",
+      "water_provider": "Barwon Water"
+    },
+    {
+      "suburb": "Lorne",
+      "postcode": "3232",
+      "region": "Geelong & Surf Coast",
+      "councils": [
+        "Surf Coast Shire"
+      ],
+      "water_authority": "Barwon Region",
+      "water_provider": "Barwon Water"
+    },
+    {
+      "suburb": "Ballarat Central",
+      "postcode": "3350",
+      "region": "Regional Victoria",
+      "councils": [
+        "Ballarat City"
+      ],
+      "water_authority": "Central Highlands",
+      "water_provider": "Central Highlands Water"
+    },
+    {
+      "suburb": "Bendigo",
+      "postcode": "3550",
+      "region": "Regional Victoria",
+      "councils": [
+        "Greater Bendigo City"
+      ],
+      "water_authority": "Coliban Region",
+      "water_provider": "Coliban Water"
+    },
+    {
+      "suburb": "Shepparton",
+      "postcode": "3630",
+      "region": "Regional Victoria",
+      "councils": [
+        "Greater Shepparton City"
+      ],
+      "water_authority": "Goulburn Valley Region",
+      "water_provider": "Goulburn Valley Water"
+    },
+    {
+      "suburb": "Mildura",
+      "postcode": "3500",
+      "region": "Regional Victoria",
+      "councils": [
+        "Mildura Rural City"
+      ],
+      "water_authority": "Lower Murray Urban",
+      "water_provider": "Lower Murray Water"
+    },
+    {
+      "suburb": "Warrnambool",
+      "postcode": "3280",
+      "region": "Regional Victoria",
+      "councils": [
+        "Warrnambool City"
+      ],
+      "water_authority": "Wannon Region",
+      "water_provider": "Wannon Water"
+    },
+    {
+      "suburb": "Wodonga",
+      "postcode": "3690",
+      "region": "Regional Victoria",
+      "councils": [
+        "Wodonga City"
+      ],
+      "water_authority": "North East Region",
+      "water_provider": "North East Water"
+    },
+    {
+      "suburb": "Traralgon",
+      "postcode": "3844",
+      "region": "Regional Victoria",
+      "councils": [
+        "Latrobe City"
+      ],
+      "water_authority": "Gippsland Region",
+      "water_provider": "Gippsland Water"
+    },
+    {
+      "suburb": "Wangaratta",
+      "postcode": "3677",
+      "region": "Regional Victoria",
+      "councils": [
+        "Wangaratta Rural City"
+      ],
+      "water_authority": "North East Region",
+      "water_provider": "North East Water"
+    },
+    {
+      "suburb": "Echuca",
+      "postcode": "3564",
+      "region": "Regional Victoria",
+      "councils": [
+        "Campaspe Shire"
+      ],
+      "water_authority": "Coliban Region",
+      "water_provider": "Coliban Water"
+    },
+    {
+      "suburb": "Sale",
+      "postcode": "3850",
+      "region": "Regional Victoria",
+      "councils": [
+        "Wellington Shire"
+      ],
+      "water_authority": "Gippsland Region",
+      "water_provider": "Gippsland Water"
+    },
+    {
+      "suburb": "Bairnsdale",
+      "postcode": "3875",
+      "region": "Regional Victoria",
+      "councils": [
+        "East Gippsland Shire"
+      ],
+      "water_authority": "East Gippsland Region",
+      "water_provider": "East Gippsland Water"
+    },
+    {
+      "suburb": "Daylesford",
+      "postcode": "3460",
+      "region": "Regional Victoria",
+      "councils": [
+        "Hepburn Shire"
+      ],
+      "water_authority": "Central Highlands",
+      "water_provider": "Central Highlands Water"
+    },
+    {
+      "suburb": "Castlemaine",
+      "postcode": "3450",
+      "region": "Regional Victoria",
+      "councils": [
+        "Mount Alexander Shire"
+      ],
+      "water_authority": "Coliban Region",
+      "water_provider": "Coliban Water"
+    }
+  ],
+  "council_aliases": {
+    "City of Melbourne": "Melbourne City",
+    "City of Yarra": "Yarra City",
+    "City of Stonnington": "Stonnington City",
+    "City of Port Phillip": "Port Phillip City",
+    "City of Boroondara": "Boroondara City",
+    "City of Whitehorse": "Whitehorse City",
+    "City of Manningham": "Manningham City",
+    "City of Monash": "Monash City",
+    "City of Maroondah": "Maroondah City",
+    "City of Knox": "Knox City",
+    "City of Merri-bek": "Merri-bek City",
+    "City of Darebin": "Darebin City",
+    "City of Whittlesea": "Whittlesea City",
+    "City of Banyule": "Banyule City",
+    "City of Hume": "Hume City",
+    "City of Moonee Valley": "Moonee Valley City",
+    "City of Maribyrnong": "Maribyrnong City",
+    "City of Hobsons Bay": "Hobsons Bay City",
+    "City of Brimbank": "Brimbank City",
+    "City of Wyndham": "Wyndham City",
+    "City of Melton": "Melton City",
+    "City of Bayside": "Bayside City",
+    "City of Kingston": "Kingston City",
+    "City of Glen Eira": "Glen Eira City",
+    "City of Frankston": "Frankston City",
+    "Mornington Peninsula Shire": "Mornington Peninsula Shire",
+    "City of Greater Dandenong": "Greater Dandenong City",
+    "City of Casey": "Casey City",
+    "Cardinia Shire": "Cardinia Shire",
+    "City of Greater Geelong": "Greater Geelong",
+    "Surf Coast Shire": "Surf Coast Shire",
+    "Borough of Queenscliffe": "Borough of Queenscliffe",
+    "City of Ballarat": "Ballarat City",
+    "City of Greater Bendigo": "Greater Bendigo City",
+    "City of Greater Shepparton": "Greater Shepparton City",
+    "Rural City of Mildura": "Mildura Rural City",
+    "City of Warrnambool": "Warrnambool City",
+    "City of Wodonga": "Wodonga City",
+    "City of Latrobe": "Latrobe City",
+    "Rural City of Wangaratta": "Wangaratta Rural City",
+    "Campaspe Shire": "Campaspe Shire",
+    "Wellington Shire": "Wellington Shire",
+    "East Gippsland Shire": "East Gippsland Shire",
+    "Hepburn Shire": "Hepburn Shire",
+    "Mount Alexander Shire": "Mount Alexander Shire"
+  },
+  "water_authorities": {
+    "Barwon Water": "Barwon Region",
+    "Central Highlands Water": "Central Highlands",
+    "Coliban Water": "Coliban Region",
+    "East Gippsland Water": "East Gippsland Region",
+    "Gippsland Water": "Gippsland Region",
+    "Goulburn Valley Water": "Goulburn Valley Region",
+    "Greater Western Water": "Greater Western",
+    "Lower Murray Water": "Lower Murray Urban",
+    "North East Water": "North East Region",
+    "South East Water": "South East",
+    "Wannon Water": "Wannon Region",
+    "Yarra Valley Water": "Yarra Valley"
+  }
+}
