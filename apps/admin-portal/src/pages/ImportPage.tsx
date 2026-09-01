@@ -34,6 +34,13 @@ type ImportResult =
   | BulkImportResult<RequiredDataField>
   | BulkImportResult<PackageDetail>;
 
+type ImportEntityMap = {
+  products: Product;
+  providers: Provider;
+  requiredData: RequiredDataField;
+  packages: PackageDetail;
+};
+
 const BULK_PATH: Record<ImportKind, string> = {
   products: "/v1/products/bulk",
   providers: "/v1/providers/bulk",
@@ -125,7 +132,7 @@ export function ImportPage() {
   }
 
   async function handleImport() {
-    const valid = parsed.filter((r) => r.data) as ParsedRow<CreateProductInput>[];
+    const valid = parsed.filter((r) => r.data && r.errors.length === 0);
     if (valid.length === 0) {
       setError("No valid rows to import.");
       return;
@@ -141,20 +148,27 @@ export function ImportPage() {
     const BATCH_SIZE = 250;
 
     try {
-      const merged: ImportResult = { created: [], errors: [], total: items.length };
+      const merged: BulkImportResult<ImportEntityMap[typeof kind]> = {
+        created: [],
+        errors: [],
+        total: items.length,
+      };
+
       for (let i = 0; i < items.length; i += BATCH_SIZE) {
         const chunk = items.slice(i, i + BATCH_SIZE);
-        const data = await api.post<ImportResult>(path, { [bodyKey]: chunk });
+        const data = await api.post<BulkImportResult<ImportEntityMap[typeof kind]>>(path, {
+          [bodyKey]: chunk,
+        });
         merged.created.push(...data.created);
         merged.errors.push(
           ...data.errors.map((e) => ({
             ...e,
-            // Adjust row hints to original CSV-ish index within this valid batch.
             row: e.row + i,
           }))
         );
       }
-      setResult(merged);
+
+      setResult(merged as ImportResult);
     } catch (e) {
       setError(e instanceof Error ? e.message : "Import failed");
     } finally {
