@@ -2,15 +2,18 @@ import { randomUUID } from "node:crypto";
 import Fastify from "fastify";
 import cors from "@fastify/cors";
 import proxy from "@fastify/http-proxy";
+import { serviceUrl } from "./lib/upstream.js";
 
 const port = Number(process.env.GATEWAY_PORT ?? process.env.PORT ?? 3000);
-const identityUrl = process.env.IDENTITY_SERVICE_URL ?? "http://localhost:3001";
-const customerUrl = process.env.CUSTOMER_SERVICE_URL ?? "http://localhost:3002";
-const skuUrl = process.env.SKU_SERVICE_URL ?? "http://localhost:3003";
-const catalogIntelligenceUrl =
-  process.env.CATALOG_INTELLIGENCE_SERVICE_URL ?? "http://localhost:3004";
-const orderUrl = process.env.ORDER_SERVICE_URL ?? "http://localhost:3007";
-const billingUrl = process.env.BILLING_SERVICE_URL ?? "http://localhost:3009";
+const identityUrl = serviceUrl(process.env.IDENTITY_SERVICE_URL, "http://localhost:3001");
+const customerUrl = serviceUrl(process.env.CUSTOMER_SERVICE_URL, "http://localhost:3002");
+const skuUrl = serviceUrl(process.env.SKU_SERVICE_URL, "http://localhost:3003");
+const catalogIntelligenceUrl = serviceUrl(
+  process.env.CATALOG_INTELLIGENCE_SERVICE_URL,
+  "http://localhost:3004"
+);
+const orderUrl = serviceUrl(process.env.ORDER_SERVICE_URL, "http://localhost:3007");
+const billingUrl = serviceUrl(process.env.BILLING_SERVICE_URL, "http://localhost:3009");
 
 function getRequestId(headers: Record<string, string | string[] | undefined>): string {
   const raw = headers["x-request-id"];

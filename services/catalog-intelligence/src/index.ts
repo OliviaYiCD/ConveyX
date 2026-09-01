@@ -4,8 +4,17 @@ import { fail, getEnv, getRequestId, ok } from "./lib/response.js";
 import { SkuClient } from "./lib/sku-client.js";
 import { registerIntelligenceRoutes } from "./routes/intelligence.js";
 
+function serviceUrl(value: string | undefined, fallback: string): string {
+  const raw = (value ?? fallback).trim();
+  if (!raw) return fallback;
+  if (raw.startsWith("http://") || raw.startsWith("https://")) return raw.replace(/\/$/, "");
+  const host = raw.replace(/\/$/, "");
+  if (host.startsWith("localhost") || host.startsWith("127.0.0.1")) return `http://${host}`;
+  return `https://${host}`;
+}
+
 const port = Number(process.env.CATALOG_INTELLIGENCE_PORT ?? process.env.PORT ?? 3004);
-const skuUrl = process.env.SKU_SERVICE_URL ?? "http://localhost:3003";
+const skuUrl = serviceUrl(process.env.SKU_SERVICE_URL, "http://localhost:3003");
 
 const app = Fastify({ logger: true });
 const skuClient = new SkuClient(skuUrl);

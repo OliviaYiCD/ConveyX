@@ -1,0 +1,131 @@
+# ConveyX backend — deploy on Render (https://render.com)
+# Dashboard → New → Blueprint → connect github.com/OliviaYiCD/ConveyX
+#
+# After deploy: copy the public URL of "conveyx-gateway" into Vercel as VITE_API_URL
+
+envVarGroups:
+  - name: conveyx-supabase
+    envVars:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+
+services:
+  - type: web
+    name: conveyx-sku
+    runtime: node
+    plan: free
+    buildCommand: corepack enable && corepack prepare pnpm@9.15.0 --activate && pnpm install --frozen-lockfile && pnpm turbo build --filter=@conveyx/sku-service
+    startCommand: node services/sku/dist/index.js
+    healthCheckPath: /health
+    envVars:
+      - fromGroup: conveyx-supabase
+      - key: NODE_VERSION
+        value: "20"
+
+  - type: web
+    name: conveyx-identity
+    runtime: node
+    plan: free
+    buildCommand: corepack enable && corepack prepare pnpm@9.15.0 --activate && pnpm install --frozen-lockfile && pnpm turbo build --filter=@conveyx/identity-service
+    startCommand: node services/identity/dist/index.js
+    healthCheckPath: /health
+    envVars:
+      - fromGroup: conveyx-supabase
+      - key: NODE_VERSION
+        value: "20"
+
+  - type: web
+    name: conveyx-customer
+    runtime: node
+    plan: free
+    buildCommand: corepack enable && corepack prepare pnpm@9.15.0 --activate && pnpm install --frozen-lockfile && pnpm turbo build --filter=@conveyx/customer-service
+    startCommand: node services/customer/dist/index.js
+    healthCheckPath: /health
+    envVars:
+      - fromGroup: conveyx-supabase
+      - key: NODE_VERSION
+        value: "20"
+
+  - type: web
+    name: conveyx-order
+    runtime: node
+    plan: free
+    buildCommand: corepack enable && corepack prepare pnpm@9.15.0 --activate && pnpm install --frozen-lockfile && pnpm turbo build --filter=@conveyx/order-service
+    startCommand: node services/order/dist/index.js
+    healthCheckPath: /health
+    envVars:
+      - fromGroup: conveyx-supabase
+      - key: NODE_VERSION
+        value: "20"
+
+  - type: web
+    name: conveyx-billing
+    runtime: node
+    plan: free
+    buildCommand: corepack enable && corepack prepare pnpm@9.15.0 --activate && pnpm install --frozen-lockfile && pnpm turbo build --filter=@conveyx/billing-service
+    startCommand: node services/billing/dist/index.js
+    healthCheckPath: /health
+    envVars:
+      - fromGroup: conveyx-supabase
+      - key: NODE_VERSION
+        value: "20"
+
+  - type: web
+    name: conveyx-catalog-intelligence
+    runtime: node
+    plan: free
+    buildCommand: corepack enable && corepack prepare pnpm@9.15.0 --activate && pnpm install --frozen-lockfile && pnpm turbo build --filter=@conveyx/catalog-intelligence-service
+    startCommand: node services/catalog-intelligence/dist/index.js
+    healthCheckPath: /health
+    envVars:
+      - fromGroup: conveyx-supabase
+      - key: NODE_VERSION
+        value: "20"
+      - key: SKU_SERVICE_URL
+        fromService:
+          type: web
+          name: conveyx-sku
+          property: host
+
+  - type: web
+    name: conveyx-gateway
+    runtime: node
+    plan: free
+    buildCommand: corepack enable && corepack prepare pnpm@9.15.0 --activate && pnpm install --frozen-lockfile && pnpm turbo build --filter=@conveyx/api-gateway
+    startCommand: node apps/api-gateway/dist/index.js
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: IDENTITY_SERVICE_URL
+        fromService:
+          type: web
+          name: conveyx-identity
+          property: host
+      - key: CUSTOMER_SERVICE_URL
+        fromService:
+          type: web
+          name: conveyx-customer
+          property: host
+      - key: SKU_SERVICE_URL
+        fromService:
+          type: web
+          name: conveyx-sku
+          property: host
+      - key: CATALOG_INTELLIGENCE_SERVICE_URL
+        fromService:
+          type: web
+          name: conveyx-catalog-intelligence
+          property: host
+      - key: ORDER_SERVICE_URL
+        fromService:
+          type: web
+          name: conveyx-order
+          property: host
+      - key: BILLING_SERVICE_URL
+        fromService:
+          type: web
+          name: conveyx-billing
+          property: host
