@@ -3,11 +3,21 @@ export function serviceUrl(value: string | undefined, fallback: string): string 
   const raw = (value ?? fallback).trim();
   if (!raw) return fallback;
 
+  let host: string;
+  let scheme = "https";
+
   if (raw.startsWith("http://") || raw.startsWith("https://")) {
-    return raw.replace(/\/$/, "");
+    try {
+      const parsed = new URL(raw);
+      host = parsed.host;
+      scheme = parsed.protocol.replace(":", "");
+    } catch {
+      return fallback;
+    }
+  } else {
+    host = raw.replace(/\/$/, "");
   }
 
-  let host = raw.replace(/\/$/, "");
   if (
     host.startsWith("localhost") ||
     host.startsWith("127.0.0.1") ||
@@ -16,10 +26,12 @@ export function serviceUrl(value: string | undefined, fallback: string): string 
     return `http://${host}`;
   }
 
-  // Render blueprint `property: host` returns private network names like "conveyx-sku".
-  if (!host.includes(".")) {
-    host = `${host}.onrender.com`;
+  // Render blueprint `property: host` yields private names like "conveyx-sku" (with or without https://).
+  const hostname = host.split(":")[0] ?? host;
+  if (!hostname.includes(".")) {
+    host = `${hostname}.onrender.com`;
+    scheme = "https";
   }
 
-  return `https://${host}`;
+  return `${scheme}://${host}`;
 }

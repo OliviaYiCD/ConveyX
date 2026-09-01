@@ -7,11 +7,31 @@ import { registerIntelligenceRoutes } from "./routes/intelligence.js";
 function serviceUrl(value: string | undefined, fallback: string): string {
   const raw = (value ?? fallback).trim();
   if (!raw) return fallback;
-  if (raw.startsWith("http://") || raw.startsWith("https://")) return raw.replace(/\/$/, "");
-  let host = raw.replace(/\/$/, "");
+
+  let host: string;
+  let scheme = "https";
+
+  if (raw.startsWith("http://") || raw.startsWith("https://")) {
+    try {
+      const parsed = new URL(raw);
+      host = parsed.host;
+      scheme = parsed.protocol.replace(":", "");
+    } catch {
+      return fallback;
+    }
+  } else {
+    host = raw.replace(/\/$/, "");
+  }
+
   if (host.startsWith("localhost") || host.startsWith("127.0.0.1")) return `http://${host}`;
-  if (!host.includes(".")) host = `${host}.onrender.com`;
-  return `https://${host}`;
+
+  const hostname = host.split(":")[0] ?? host;
+  if (!hostname.includes(".")) {
+    host = `${hostname}.onrender.com`;
+    scheme = "https";
+  }
+
+  return `${scheme}://${host}`;
 }
 
 const port = Number(process.env.CATALOG_INTELLIGENCE_PORT ?? process.env.PORT ?? 3004);
