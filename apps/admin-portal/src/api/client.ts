@@ -23,7 +23,17 @@ async function requestRaw<T>(
     headers,
   });
 
-  const json = (await res.json()) as ApiResponse<T> | ApiErrorBody | { message?: string; error?: string };
+  const text = await res.text();
+  let json: ApiResponse<T> | ApiErrorBody | { message?: string; error?: string };
+  try {
+    json = JSON.parse(text) as typeof json;
+  } catch {
+    throw new Error(
+      res.ok
+        ? "API returned invalid JSON"
+        : `Request failed (${res.status}): server returned HTML instead of JSON`
+    );
+  }
 
   if (!res.ok) {
     const err = json as ApiErrorBody & { message?: string };

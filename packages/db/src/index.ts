@@ -1,5 +1,6 @@
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import pg from "pg";
+import ws from "ws";
 
 let pool: pg.Pool | null = null;
 let supabase: SupabaseClient | null = null;
@@ -17,6 +18,10 @@ function getSupabase(): SupabaseClient {
     const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
     if (!url || !key) {
       throw new Error("SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY required (or set DATABASE_URL)");
+    }
+    // Node < 22 has no native WebSocket; Supabase client requires one for RPC.
+    if (typeof globalThis.WebSocket === "undefined") {
+      globalThis.WebSocket = ws as unknown as typeof WebSocket;
     }
     supabase = createClient(url, key, { auth: { persistSession: false, autoRefreshToken: false } });
   }
