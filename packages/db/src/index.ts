@@ -12,13 +12,69 @@ export function getDbMode(): DbMode {
   return "rpc";
 }
 
+export type SupabaseEnvDiagnostics = {
+  supabase_url_set: boolean;
+  supabase_key_set: boolean;
+  supabase_url_host: string | null;
+  key_length: number;
+  key_role: string | null;
+  key_project_ref: string | null;
+  refs_match: boolean | null;
+};
+
+function parseSupabaseKey(key: string): { role: string | null; ref: string | null } {
+  try {
+    const payloadPart = key.split(".")[1];
+    if (!payloadPart) return { role: null, ref: null };
+    const payload = JSON.parse(Buffer.from(payloadPart, "base64url").toString()) as {
+      role?: string;
+      ref?: string;
+    };
+    return { role: payload.role ?? null, ref: payload.ref ?? null };
+  } catch {
+    return { role: null, ref: null };
+  }
+}
+
+export function getSupabaseEnvDiagnostics(): SupabaseEnvDiagnostics {
+  const url = process.env.SUPABASE_URL?.trim() ?? "";
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY?.trim() ?? "";
+  const urlRef = url.match(/https?:\/\/([^.]+)\.supabase\.co/)?.[1] ?? null;
+  const { role, ref } = key ? parseSupabaseKey(key) : { role: null, ref: null };
+
+  return {
+    supabase_url_set: Boolean(url),
+    supabase_key_set: Boolean(key),
+    supabase_url_host: urlRef ? `${urlRef}.supabase.co` : url ? "(non-standard url)" : null,
+    key_length: key.length,
+    key_role: role,
+    key_project_ref: ref,
+    refs_match: urlRef && ref ? urlRef === ref : null,
+  };
+}
+
 function getSupabase(): SupabaseClient {
   if (!supabase) {
-    const url = process.env.SUPABASE_URL;
-    const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+    const url = process.env.SUPABASE_URL?.trim();
+    const key = process.env.SUPABASE_SERVICE_ROLE_KEY?.trim();
     if (!url || !key) {
       throw new Error("SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY required (or set DATABASE_URL)");
     }
+
+    const { role, ref } = parseSupabaseKey(key);
+    if (role && role !== "service_role") {
+      throw new Error(
+        `SUPABASE_SERVICE_ROLE_KEY has role "${role}" — paste the service_role secret from Supabase Dashboard → Project Settings → API`
+      );
+    }
+
+    const urlRef = url.match(/https?:\/\/([^.]+)\.supabase\.co/)?.[1] ?? null;
+    if (urlRef && ref && urlRef !== ref) {
+      throw new Error(
+        `SUPABASE_URL project (${urlRef}) does not match key project (${ref})`
+      );
+    }
+
     // Node < 22 has no native WebSocket; Supabase client requires one for RPC.
     if (typeof globalThis.WebSocket === "undefined") {
       globalThis.WebSocket = ws as unknown as typeof WebSocket;
@@ -70,7 +126,9 @@ export async function queryOne<T extends pg.QueryResultRow = pg.QueryResultRow>(
 
 export async function checkDbHealth(): Promise<boolean> {
   try {
-    if (process.env.SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY) {
+    const url = process.env.SUPABASE_URL?.trim();
+    const key = process.env.SUPABASE_SERVICE_ROLE_KEY?.trim();
+    if (url && key) {
       await rpc("cx_health_check");
       return true;
     }

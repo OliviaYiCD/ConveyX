@@ -1,6 +1,7 @@
 import Fastify from "fastify";
 import cors from "@fastify/cors";
 import { checkDbHealth } from "./lib/db.js";
+import { getSupabaseEnvDiagnostics } from "@conveyx/db";
 import { fail, getRequestId, ok, getEnv } from "./lib/response.js";
 import { registerProviderRoutes } from "./routes/providers.js";
 import { registerRequiredDataRoutes } from "./routes/required-data.js";
@@ -32,7 +33,10 @@ app.get("/health/ready", async (request, reply) => {
   const dbOk = await checkDbHealth();
   if (!dbOk) {
     const err = fail("NOT_READY", "Database unavailable", requestId, 503);
-    return reply.status(err.statusCode).send(err.body);
+    return reply.status(err.statusCode).send({
+      ...err.body,
+      data: { diagnostics: getSupabaseEnvDiagnostics() },
+    });
   }
   return reply.send(ok({ status: "ready", service: "sku-service" }, requestId));
 });
