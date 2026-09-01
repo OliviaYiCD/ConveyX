@@ -3,5 +3,6 @@
   "buildCommand": "cd ../.. && corepack enable && corepack prepare pnpm@9.15.0 --activate && pnpm install --frozen-lockfile && pnpm turbo build --filter=@conveyx/admin-portal",
   "outputDirectory": "dist",
   "framework": "vite",
-  "installCommand": "cd ../.. && corepack enable && corepack prepare pnpm@9.15.0 --activate && pnpm install --frozen-lockfile"
+  "installCommand": "cd ../.. && corepack enable && corepack prepare pnpm@9.15.0 --activate && pnpm install --frozen-lockfile",
+  "rewrites": [{ "source": "/((?!assets/).*)", "destination": "/index.html" }]
 }
