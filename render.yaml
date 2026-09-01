@@ -1,10 +1,5 @@
 # ConveyX backend — deploy on Render (https://render.com)
-# Dashboard → New → Blueprint → connect github.com/OliviaYiCD/ConveyX
-#
-# BEFORE clicking Deploy: fill in SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY
-# (from Supabase Dashboard → Settings → API, or your local .env file).
-#
-# After deploy: copy the public URL of "conveyx-gateway" into Vercel as VITE_API_URL
+# Sync this file via Blueprint → Manual sync (branch: main)
 
 envVarGroups:
   - name: conveyx-supabase
@@ -19,61 +14,73 @@ services:
     name: conveyx-sku
     runtime: node
     plan: free
-    buildCommand: pnpm install --frozen-lockfile && pnpm turbo build --filter=@conveyx/sku-service
+    buildCommand: pnpm install --frozen-lockfile && pnpm exec turbo build --filter=@conveyx/sku-service
     startCommand: node services/sku/dist/index.js
     healthCheckPath: /health
     envVars:
       - fromGroup: conveyx-supabase
+      - key: NODE_VERSION
+        value: "20.18.0"
 
   - type: web
     name: conveyx-identity
     runtime: node
     plan: free
-    buildCommand: pnpm install --frozen-lockfile && pnpm turbo build --filter=@conveyx/identity-service
+    buildCommand: pnpm install --frozen-lockfile && pnpm exec turbo build --filter=@conveyx/identity-service
     startCommand: node services/identity/dist/index.js
     healthCheckPath: /health
     envVars:
       - fromGroup: conveyx-supabase
+      - key: NODE_VERSION
+        value: "20.18.0"
 
   - type: web
     name: conveyx-customer
     runtime: node
     plan: free
-    buildCommand: pnpm install --frozen-lockfile && pnpm turbo build --filter=@conveyx/customer-service
+    buildCommand: pnpm install --frozen-lockfile && pnpm exec turbo build --filter=@conveyx/customer-service
     startCommand: node services/customer/dist/index.js
     healthCheckPath: /health
     envVars:
       - fromGroup: conveyx-supabase
+      - key: NODE_VERSION
+        value: "20.18.0"
 
   - type: web
     name: conveyx-order
     runtime: node
     plan: free
-    buildCommand: pnpm install --frozen-lockfile && pnpm turbo build --filter=@conveyx/order-service
+    buildCommand: pnpm install --frozen-lockfile && pnpm exec turbo build --filter=@conveyx/order-service
     startCommand: node services/order/dist/index.js
     healthCheckPath: /health
     envVars:
       - fromGroup: conveyx-supabase
+      - key: NODE_VERSION
+        value: "20.18.0"
 
   - type: web
     name: conveyx-billing
     runtime: node
     plan: free
-    buildCommand: pnpm install --frozen-lockfile && pnpm turbo build --filter=@conveyx/billing-service
+    buildCommand: pnpm install --frozen-lockfile && pnpm exec turbo build --filter=@conveyx/billing-service
     startCommand: node services/billing/dist/index.js
     healthCheckPath: /health
     envVars:
       - fromGroup: conveyx-supabase
+      - key: NODE_VERSION
+        value: "20.18.0"
 
   - type: web
     name: conveyx-catalog-intelligence
     runtime: node
     plan: free
-    buildCommand: pnpm install --frozen-lockfile && pnpm turbo build --filter=@conveyx/catalog-intelligence-service
+    buildCommand: pnpm install --frozen-lockfile && pnpm exec turbo build --filter=@conveyx/catalog-intelligence-service
     startCommand: node services/catalog-intelligence/dist/index.js
     healthCheckPath: /health
     envVars:
       - fromGroup: conveyx-supabase
+      - key: NODE_VERSION
+        value: "20.18.0"
       - key: SKU_SERVICE_URL
         fromService:
           type: web
@@ -84,10 +91,12 @@ services:
     name: conveyx-gateway
     runtime: node
     plan: free
-    buildCommand: pnpm install --frozen-lockfile && pnpm turbo build --filter=@conveyx/api-gateway
+    buildCommand: pnpm install --frozen-lockfile && pnpm exec turbo build --filter=@conveyx/api-gateway
     startCommand: node apps/api-gateway/dist/index.js
     healthCheckPath: /health
     envVars:
+      - key: NODE_VERSION
+        value: "20.18.0"
       - key: IDENTITY_SERVICE_URL
         fromService:
           type: web
