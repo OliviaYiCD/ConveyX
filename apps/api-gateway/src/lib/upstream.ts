@@ -7,13 +7,18 @@ export function serviceUrl(value: string | undefined, fallback: string): string 
     return raw.replace(/\/$/, "");
   }
 
-  const host = raw.replace(/\/$/, "");
+  let host = raw.replace(/\/$/, "");
   if (
     host.startsWith("localhost") ||
     host.startsWith("127.0.0.1") ||
     host.includes(".railway.internal")
   ) {
     return `http://${host}`;
+  }
+
+  // Render blueprint `property: host` returns private network names like "conveyx-sku".
+  if (!host.includes(".")) {
+    host = `${host}.onrender.com`;
   }
 
   return `https://${host}`;

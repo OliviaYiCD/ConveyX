@@ -8,8 +8,9 @@ function serviceUrl(value: string | undefined, fallback: string): string {
   const raw = (value ?? fallback).trim();
   if (!raw) return fallback;
   if (raw.startsWith("http://") || raw.startsWith("https://")) return raw.replace(/\/$/, "");
-  const host = raw.replace(/\/$/, "");
+  let host = raw.replace(/\/$/, "");
   if (host.startsWith("localhost") || host.startsWith("127.0.0.1")) return `http://${host}`;
+  if (!host.includes(".")) host = `${host}.onrender.com`;
   return `https://${host}`;
 }
 

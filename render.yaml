@@ -85,7 +85,7 @@ services:
         fromService:
           type: web
           name: conveyx-sku
-          property: host
+          envVarKey: RENDER_EXTERNAL_URL
 
   - type: web
     name: conveyx-gateway
@@ -101,29 +101,29 @@ services:
         fromService:
           type: web
           name: conveyx-identity
-          property: host
+          envVarKey: RENDER_EXTERNAL_URL
       - key: CUSTOMER_SERVICE_URL
         fromService:
           type: web
           name: conveyx-customer
-          property: host
+          envVarKey: RENDER_EXTERNAL_URL
       - key: SKU_SERVICE_URL
         fromService:
           type: web
           name: conveyx-sku
-          property: host
+          envVarKey: RENDER_EXTERNAL_URL
       - key: CATALOG_INTELLIGENCE_SERVICE_URL
         fromService:
           type: web
           name: conveyx-catalog-intelligence
-          property: host
+          envVarKey: RENDER_EXTERNAL_URL
       - key: ORDER_SERVICE_URL
         fromService:
           type: web
           name: conveyx-order
-          property: host
+          envVarKey: RENDER_EXTERNAL_URL
       - key: BILLING_SERVICE_URL
         fromService:
           type: web
           name: conveyx-billing
-          property: host
+          envVarKey: RENDER_EXTERNAL_URL
