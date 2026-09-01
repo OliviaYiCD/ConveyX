@@ -19,7 +19,6 @@ services:
     name: conveyx-sku
     runtime: node
     plan: free
-    nodeVersion: "20"
     buildCommand: pnpm install --frozen-lockfile && pnpm turbo build --filter=@conveyx/sku-service
     startCommand: node services/sku/dist/index.js
     healthCheckPath: /health
@@ -30,7 +29,6 @@ services:
     name: conveyx-identity
     runtime: node
     plan: free
-    nodeVersion: "20"
     buildCommand: pnpm install --frozen-lockfile && pnpm turbo build --filter=@conveyx/identity-service
     startCommand: node services/identity/dist/index.js
     healthCheckPath: /health
@@ -41,7 +39,6 @@ services:
     name: conveyx-customer
     runtime: node
     plan: free
-    nodeVersion: "20"
     buildCommand: pnpm install --frozen-lockfile && pnpm turbo build --filter=@conveyx/customer-service
     startCommand: node services/customer/dist/index.js
     healthCheckPath: /health
@@ -52,7 +49,6 @@ services:
     name: conveyx-order
     runtime: node
     plan: free
-    nodeVersion: "20"
     buildCommand: pnpm install --frozen-lockfile && pnpm turbo build --filter=@conveyx/order-service
     startCommand: node services/order/dist/index.js
     healthCheckPath: /health
@@ -63,7 +59,6 @@ services:
     name: conveyx-billing
     runtime: node
     plan: free
-    nodeVersion: "20"
     buildCommand: pnpm install --frozen-lockfile && pnpm turbo build --filter=@conveyx/billing-service
     startCommand: node services/billing/dist/index.js
     healthCheckPath: /health
@@ -74,7 +69,6 @@ services:
     name: conveyx-catalog-intelligence
     runtime: node
     plan: free
-    nodeVersion: "20"
     buildCommand: pnpm install --frozen-lockfile && pnpm turbo build --filter=@conveyx/catalog-intelligence-service
     startCommand: node services/catalog-intelligence/dist/index.js
     healthCheckPath: /health
@@ -90,7 +84,6 @@ services:
     name: conveyx-gateway
     runtime: node
     plan: free
-    nodeVersion: "20"
     buildCommand: pnpm install --frozen-lockfile && pnpm turbo build --filter=@conveyx/api-gateway
     startCommand: node apps/api-gateway/dist/index.js
     healthCheckPath: /health
